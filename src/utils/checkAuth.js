@@ -7,7 +7,7 @@ export async function checkAuth (req, res, next) {
          return res.status(400).json({message:'Вы не авторизованы'})
       }
       const id = jwt.decode(token, 'vanusha12')
-      req.id =id
+      req.id =id.id
       next()
    }
    catch (e) {

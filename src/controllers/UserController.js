@@ -1,6 +1,7 @@
 import jwt from 'jsonwebtoken';
+import bcrypt from 'bcrypt';
 
-import UserModel from '../models/User.js'
+import UserModel from '../models/User.js';
 
 export const login = async function (req, res) {
   try {
@@ -40,7 +41,7 @@ export const register = async function (req, res) {
 };
 export const auth = async function (req, res) {
   try {
-    const user = await UserModel.findById(req.id.id);
+    const user = await UserModel.findById(req.id);
     if (!user) {
       return res.status(404).json({ message: 'Вы не авторизованы' });
     }
