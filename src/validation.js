@@ -2,8 +2,8 @@ import { body } from "express-validator";
 
 
 export const registerValidation = [
-   body('fullName').isLength({min:2}).isString(),
-   body('email').isEmail(),
-   body('password').isLength({min:5}),
-   body('avatarURL').optional().isURL()
+   body('fullName','Слишком короткое имя').isLength({min:2}).isString(),
+   body('email','Пожалуйста введите корректный email').isEmail(),
+   body('password','Слишком короткий пароль').isLength({min:5}),
+   body('avatarURL','Введите корректную ссылку на аватар').optional().isURL()
 ]
