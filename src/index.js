@@ -48,7 +48,7 @@ function start() {
     app.listen(PORT, () => console.log('Server start'));
     mongoose
       .connect(
-        'mongodb+srv://admin:vanusha12@cluster0.ppmiq1w.mongodb.net/blog?retryWrites=true&w=majority',
+        'mongodb+srv://admin:<password>@cluster0.59ut51z.mongodb.net/',
       )
       .then(() => console.log('DB Start'));
   } catch (e) {
